@@ -1,0 +1,30 @@
+{
+  "name": "ecomerce-backend",
+  "version": "1.0.0",
+  "description": "E-commerce Backend para el master G7",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "backend",
+    "ecommerce"
+  ],
+  "author": "Raul Jimenez",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "celebrate": "^15.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.1.2",
+    "morgan": "^1.10.0"
+  }
+}
