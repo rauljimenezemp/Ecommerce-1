@@ -1,4 +1,6 @@
 const { AuthModel } = require('../models')
+const jwt = require('jsonwebtoken')
+const SECRET = process.env.SECRET;
 
 const register = async (req, res) => {
   //Estructurar email y password.
@@ -46,9 +48,15 @@ const login = async (req, res) => {
     }
 
     //Ya validado el password, crear token de autenticación.
-    //agregar token a petición y responder.
+    const payload = {
+      id: user._id,
+      email: user.email
+    };
 
-    return res.send({ message: 'Hola desde login!'});
+      // Generamos un token con el payload y nuestro secreto
+    const token = jwt.sign(payload, SECRET);
+
+    return res.send({ message: 'Hola desde login!', token });
   } catch (err) {
     return res.status(400).send({ message: 'Error al hacer login!', error: err.message });
   }
